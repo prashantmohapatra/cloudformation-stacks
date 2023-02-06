@@ -4,7 +4,7 @@ CloudFormation stack for creating a VPC
 ### Commandline
 To use this, ensure you are logged in to the AWS account programmatically and access keys are available locally. 
 
-Source the cmd.sh file - <br>
+Source the command-line.sh file - <br>
 `source */command-line.sh`
 <br>
 

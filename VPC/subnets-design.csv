@@ -1,15 +1,13 @@
-NAME,CIDR,AZ,CustomeIPv6Value
-pm-sn-reserved-A 10.16.0.0/20 AZA IPv6 00
-pm-sn-db-A 10.16.16.0/20 AZA IPv6 01
-pm-sn-app-A 10.16.32.0/20 AZA IPv6 02
-pm-sn-web-A 10.16.48.0/20 AZA IPv6 03
-
-pm-sn-reserved-B 10.16.64.0/20 AZB IPv6 04
-pm-sn-db-B 10.16.80.0/20 AZB IPv6 05
-pm-sn-app-B 10.16.96.0/20 AZB IPv6 06
-pm-sn-web-B 10.16.112.0/20 AZB IPv6 07
-
-pm-sn-reserved-C 10.16.128.0/20 AZC IPv6 08
-pm-sn-db-C 10.16.144.0/20 AZC IPv6 09
-pm-sn-app-C 10.16.160.0/20 AZC IPv6 0A
-pm-sn-web-C 10.16.176.0/20 AZC IPv6 0B
+NAME,CIDR,AZ,CustomIPv6Value
+pm-sn-reserved-A,10.16.0.0/20,AZA,00
+pm-sn-db-A,10.16.16.0/20,AZA,01
+pm-sn-app-A,10.16.32.0/20,AZA,02
+pm-sn-web-A,10.16.48.0/20,AZA,03
+pm-sn-reserved-B,10.16.64.0/20,AZB,04
+pm-sn-db-B,10.16.80.0/20,AZB,05
+pm-sn-app-B,10.16.96.0/20,AZB,06
+pm-sn-web-B,10.16.112.0/20,AZB,07
+pm-sn-reserved-C,10.16.128.0/20,AZC,08
+pm-sn-db-C,10.16.144.0/20,AZC,09
+pm-sn-app-C,10.16.160.0/20,AZC,0A
+pm-sn-web-C,10.16.176.0/20,AZC,0B
