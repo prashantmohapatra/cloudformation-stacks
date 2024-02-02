@@ -39,7 +39,7 @@ Resources:
             Principal: '*'
             Resource: !Sub 'arn:aws:s3:::${AllureReportBucket}/*'
             Condition:
-              IpAddress:
+              NotIpAddress:
                 aws:SourceIp: !Ref AllowedIPAddress
 
 Outputs:
