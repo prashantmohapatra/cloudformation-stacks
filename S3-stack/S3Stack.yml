@@ -1,0 +1,47 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Parameters:
+  AllowedIPAddress:
+    Type: String
+    Description: The IP address to allow access to the S3 bucket.
+
+Resources:
+  AllureReportBucket:
+    Type: 'AWS::S3::Bucket'
+    DeletionPolicy: Delete
+
+    Properties:
+      LifecycleConfiguration:
+        Rules:
+          - Id: ObjectExpiryRule
+            Status: Enabled
+            ExpirationInDays: 100
+          - Id: TransitionToInfrequentAccess
+            Status: Enabled
+            Transitions:
+              - StorageClass: 'INTELLIGENT_TIERING'
+                TransitionInDays: 30
+          - Id: TransitionToGlacier
+            Status: Enabled
+            Transitions:
+              - StorageClass: 'GLACIER'
+                TransitionInDays: 60
+
+  AllureReportBucketPolicy:
+    Type: 'AWS::S3::BucketPolicy'
+    Properties:
+      Bucket: !Ref AllureReportBucket
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: 'Deny'
+            Action: '*'
+            Principal: '*'
+            Resource: !Sub 'arn:aws:s3:::${AllureReportBucket}/*'
+            Condition:
+              IpAddress:
+                aws:SourceIp: !Ref AllowedIPAddress
+
+Outputs:
+  AllureReportBucketName:
+    Value: !Ref AllureReportBucket
