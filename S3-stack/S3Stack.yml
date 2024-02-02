@@ -34,12 +34,14 @@ Resources:
       PolicyDocument:
         Version: '2012-10-17'
         Statement:
-          - Effect: 'Deny'
+          - Effect: 'Allow'
             Action: '*'
             Principal: '*'
-            Resource: !Sub 'arn:aws:s3:::${AllureReportBucket}/*'
+            Resource:
+              - !Sub 'arn:aws:s3:::${AllureReportBucket}'
+              - !Sub 'arn:aws:s3:::${AllureReportBucket}/*'
             Condition:
-              NotIpAddress:
+              IpAddress:
                 aws:SourceIp: !Ref AllowedIPAddress
 
 Outputs:
